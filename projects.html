@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NCIHA Main Page</title>
+<link href="MainCSS.css" rel="stylesheet" type="text/css">
+<!--<link rel="shortcut icon" href="resources/favicon-32x32.png" /> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src="jQuery.js"></script>
+</head>
+
+<body>
+<div class="container">
+  <div class="header">
+  <br>
+  <!--<img  class="headerimage" src="resources/NCIHA Logo Cropped.png" height="175" style="background-color: #DBD0C4;
+  " />-->
+  <center>
+  <h1>Preston's Portfolio</h1>
+  <h3>"Any sufficiently advanced technology is indistinguishable from magic."
+  <br>-Arthur C. Clarke</h3>
+  
+  <br>
+  <div class="titletextsuper">
+  <!--<div class="vertical-line" style="height: 175px;"> </div>-->
+  <!--<font class="titlesubtext">North Carolina Industrial Hemp Association</font> <br>
+  <font class="titlesubtext">ncindhemp.org</font>-->
+  </center>
+  </div>
+  <br>
+  <br>
+ <ul class="navbar">
+  <a href="index.html"><li>Home</li></a>
+  <a href="about.html"><li>About</li></a>
+  <a href="projects.html"><li>Projects</li></a>
+  </ul>
+  </div>
+  <div class="contentnosidebar">
+  <div class="tabs">
+    <ul class="tab-links">
+        <li class="active"><a href="#tab1">Fibonacci</a></li>
+        <li><a href="#tab2">Collatz Conjecture</a></li>
+        <li><a href="#tab3">Historical Weekday Calculator</a></li>
+        <li><a href="#tab4">Other Projects</a></li>
+    </ul>
+ 
+    <div class="tab-content">
+        <div id="tab1" class="tab active">
+        <p>The Fibonacci Sequence is fairly simple. First, you start with the number 1. Then, you progress, adding the previous number to the current number to get a new number. 1 + (null) = 1, 1 + 1 = 2, 2 + 1 = 3, 3 + 2 = 5, and so on.<br> This program prompts the user with how many spaces they want to go to, and then prints the results.</p>
+        <button class="Fibonacci">Click to run the program</button>
+        <textarea cols="75" rows="20" id="FibonacciOutput"></textarea>
+        </div>
+ 
+        <div id="tab2" class="tab">
+        <p>The Collatz Conjecture is a theory that states that for any positive integer, the number 1 can be reached through a simple logical process: 
+        <ul>
+        <li>If the number is even, it's divided by 2.</li> 
+        <li>If the number is odd, it's multiplied by 3, then one is added</li>
+        </ul>
+        If the process is repeated enough, the number will eventually reach zero.<br>
+        This program takes a positive integer input from the user, and runs the Collatz Conjecture on the number. It prints the number at each step, and at the end tells you how many steps it took to reach one. If the program doesn't work, try to remember what number you entered, because you may have disproved the Collatz Conjecture (it might be my code not working, but what are the chances of that?)</p>
+            <button class="Collatz">Click to run the program</button>
+        <textarea cols="75" rows="20" id="CollatzOutput"></textarea>
+        <textarea cols="75" rows="1" id="CollatzOutput2"></textarea>
+        </div>
+ 
+        <div id="tab3" class="tab">
+        <p>This program is simple. You enter a day, month, and year. Using today's day, month and year, as well as the complicated leap year rules, this program will tell you what day of the week your inputed day fell on.</p>
+            <button class="Weekday">Click to run the program</button>
+            <textarea cols="75" rows="1" id="WeekdayOutput"></textarea>
+        </div>
+        <div id="tab4" class="tab">
+        <p>The projects you can run here are just the Javascript Programs I have. I have multiple Python projects as well, which you can view in my Github. Just click the button below.</p>
+        <button>Go to Github</button>
+        </div>
+    </div>
+</div>
+  </div>
+  <div class="footer">
+  <p>Python, Javascript, and Beauty&trade;</p>
+  </div>
+  </div>
+</body>
+  </html>
