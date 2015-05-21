@@ -1,0 +1,4 @@
+IDE: Pycharm
+API's: Goslate
+GUI app we are using: tkinter
+#Made by Alex

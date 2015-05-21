@@ -1,0 +1,17 @@
+repeat variable is equal to true
+score = 0
+While loop that runs if repeat is equal to true	
+	Get user input for difficulty level (buttons?)
+	Get user input for text
+	Method: Using a randomizer to choose a random language based on difficulty level:
+		Array/list of languages for each difficulty level
+		Choose a random language from that array/list
+		Input the text into the program, and translate it into the random language chosen
+		Output the translated text
+		Prompt user asking what language it is
+		Check if language answered = language translated to
+		Tell them if they’re correct
+		Add to score if correct, more adding for more correct score
+		Ask them if they want to do another round
+		If yes, also ask if they want to change difficulty
+Made by Prestoner Richey
