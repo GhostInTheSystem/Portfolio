@@ -54,8 +54,8 @@ jQuery(document).ready(function() {
      }
 	});
 	jQuery(".Weekday").click(function() {
-		var year = parseInt(prompt("Please enter a historical year."), 10);
-		var month = prompt("Please enter a historical month. Use 1-12 or the month names.").toLowerCase();
+		var year = parseInt(prompt("Please enter a year."), 10);
+		var month = prompt("Please enter a month. Use 1-12 or the month names.").toLowerCase();
 		switch (true){
 			case (month=="january"||month=="jan"):
 				month = 1;
@@ -96,7 +96,7 @@ jQuery(document).ready(function() {
 			default:
 				month = parseInt(month, 10);
 		}
-		var day = parseInt(prompt("Please enter a historical day."), 10);
+		var day = parseInt(prompt("Please enter a day."), 10);
 		var today = new Date();
 		var dayToday = today.getDate();
 		var monthToday = today.getMonth()+1;
