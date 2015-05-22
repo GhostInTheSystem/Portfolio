@@ -29,7 +29,7 @@ Preston Richey
 <li>Making the readme.md</li>
 <li>General Tomfoolery</li>
 </ul>
-Theodore Turtle
+Theodore Trutle
 <ul>
 <li>Being Beautiful</li>
 <li>We love him more than life</li>
