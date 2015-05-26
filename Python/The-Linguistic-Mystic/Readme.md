@@ -1,4 +1,6 @@
-<p>This game is a language recognition game. You enter your own text, and it translates that text into a random language. You then are given four options of what language the text could be in. Choosing the right one will allow you to continue and give you a point. If you get 10 points, you will advance to the next level. If you get 10 points on level 5, you will unlock regional levels, where languages are based on certain regions. </p>
+<p>This game is a language recognition game. You enter your own text, and it translates that text into a random language. You then are given four options of what language the text could be in. Choosing the right one will allow you to continue and give you a point. If you get 10 points, you will advance to the next level. If you get 10 points on level 5, you will unlock regional levels, where languages are based on certain regions. <br>
+Note: This game requires the goslate API (needs downloading), and the tkinter package (built-in with default Python).
+</p>
 <br>Group Members:<br>
 Otis Sperry
 <ul>
