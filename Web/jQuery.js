@@ -22,8 +22,9 @@ jQuery(document).ready(function() {
  		   	number += numberAdd;
  		   	places -= 1;
     		numbersToPrint.push(number);
+    		var finalPrint = numbersToPrint.join(', ');
 		};
-		document.getElementById("FibonacciOutput").innerHTML = numbersToPrint;
+		document.getElementById("FibonacciOutput").innerHTML = finalPrint;
 	});
 	jQuery(".Collatz").click(function() {
 		var steps = 0;
