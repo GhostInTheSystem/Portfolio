@@ -22,8 +22,8 @@ jQuery(document).ready(function() {
  		   	number += numberAdd;
  		   	places -= 1;
     		numbersToPrint.push(number);
-    		var finalPrint = numbersToPrint.join(', ');
 		};
+		var finalPrint = numbersToPrint.join(', ');
 		document.getElementById("FibonacciOutput").innerHTML = finalPrint;
 	});
 	jQuery(".Collatz").click(function() {
@@ -50,7 +50,8 @@ jQuery(document).ready(function() {
 					numbersToPrint.push(number);
 				 }
 			}
-		document.getElementById("CollatzOutput").innerHTML = (numbersToPrint);
+		var finalPrint = numbersToPrint.join(', ');
+		document.getElementById("CollatzOutput").innerHTML = (finalPrint);
 		document.getElementById("CollatzOutput2").innerHTML = ("Congratulations! You're done! It took " + steps + " steps.");
      }
 	});
