@@ -23,7 +23,8 @@ jQuery(document).ready(function() {
  		   	places -= 1;
     		numbersToPrint.push(number);
 		};
-		document.getElementById("FibonacciOutput").innerHTML = numbersToPrint;
+		finalPrint=numbersToPrint.join(', ');
+		document.getElementById("FibonacciOutput").innerHTML = finalPrint;
 	});
 	jQuery(".Collatz").click(function() {
 		var steps = 0;
@@ -49,7 +50,8 @@ jQuery(document).ready(function() {
 					numbersToPrint.push(number);
 				 }
 			}
-		document.getElementById("CollatzOutput").innerHTML = (numbersToPrint);
+		finalPrint=numbersToPrint.join(', ');
+		document.getElementById("CollatzOutput").innerHTML = (finalPrint);
 		document.getElementById("CollatzOutput2").innerHTML = ("Congratulations! You're done! It took " + steps + " steps.");
      }
 	});
