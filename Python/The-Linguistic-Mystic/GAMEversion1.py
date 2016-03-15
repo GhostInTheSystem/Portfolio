@@ -1,16 +1,19 @@
 #Made By Kira
 #Debugged by Alex, Otis, and Preston
-import goslate
+# -*- coding: utf-16 -*-
+from __future__ import print_function
+from __future__ import unicode_literals
+from googleapiclient.discovery import build
 import random
-from tkinter import *
+from Tkinter import *
 import os
+service = build('translate', 'v2',
+            developerKey='AIzaSyBUQS5Uc1v8Iq8kTbSkhdnNPkF6icsBG3w')
 timesThrough = 0
-herLove = "Trutle"
 #as long as you get the translation right you can play again and again
 correctness = "Correct"
 def changeWindowIcon(windowName):
     iconLocation = os.path.dirname(os.path.realpath(__file__)) + "\Icon1.ico"
-    #print(iconLocation)
     windowName.iconbitmap(r'' + iconLocation)
 def windowSettings(windowName):
     top.minsize(500,500)
@@ -22,14 +25,7 @@ def windowSettings(windowName):
     x = (ws/2) - (h/2)
     y = (hs/2) - (h/2)
     windowName.geometry('%dx%d+%d+%d' % (w, h, x, y))
-def enchanted():
-    yay = "Get tha jamaicnca mon"
-    no = "I be sorry mon but she dont be true"
-    if (herLove == "True"):
-        return yay
-    else:
-        return no
-levelOneLanguageCodes = ["fr", "es", "el", "ru", "zh-CN", "ar"]
+levelOneLanguageCodes = ["fr", "es", "el", "ru", "zh", "ar"]
 levelTwoLanguageCodes = ["de", "ja", "la", "it", "sv"]
 levelThreeLanguageCodes = ["fi", "ko", "iw", "ga", "is", "ro"]
 levelFourLanguageCodes = ["af", "vi", "hi", "th", "ta", "no"]
@@ -43,7 +39,7 @@ levelFiveLanguages = ["Persian", "Bulgarian", "Ukrainian", "Traditional Chinese"
 africaLanguageCodes = ["af","ny","ha","ig","st","so","su","sw","yo","zu"]
 africaLanguages = ["Afrikaans","Chichewa","Hausa","Igbo","Sesotho","Somali","Sundanese","Swahili",
                    "Yoruba","Zulu"]
-eastAsiaLanguageCodes = ["zh","zh-CN","zh-TW","hmn","ja","km","ko","lo","mn","my","ne","th","vi"]
+eastAsiaLanguageCodes = ["zh","zh","zh-TW","hmn","ja","km","ko","lo","mn","my","ne","th","vi"]
 eastAsiaLanguages = ["Chinese","Chinese (Simplified","Chinese (Traditional","Hmong","Japanese","Khmer","Korean",
                      "Lao","Mongolian","Myanmar","Nepali","Thai","Vietnamese"]
 europeLanguageCodes = ["sq","eu","bg","ca","cs","da","nl","fi","fr","gl","de","el","hu","is","ga","it",
@@ -70,8 +66,8 @@ while(correctness == "Correct"):
         top = Tk()
         windowSettings(top)
         changeWindowIcon(top)
-        translator = goslate.Goslate()
-        availableLanguages = translator.get_languages()
+        ###translator = goslate.Goslate()
+        ###availableLanguages = translator.get_languages()
         #print(availableLanguages)
         startLabel1 = Label(top, text = "Hello, welcome to The Linguistic Mystic!")
         startLabel2 = Label(top, text = "First, enter some text.")
@@ -176,8 +172,28 @@ while(correctness == "Correct"):
     windowSettings(top)
     changeWindowIcon(top)
     correctness = 0
-    translation = translator.translate(userRequestForTranslation, i)
-    printTranslation = Label(top, text=translation)
+    translator = (service.translations().list(
+        source='en',
+        target=i,
+        q=[userRequestForTranslation]
+    ).execute())
+    translator = str(translator)
+    countI = 0
+    translationStart = 0
+    translationEnd = 0
+    while countI<(len(translator)-2):
+        if(translator[countI]==':' and translator[countI+1]==' ' and translator[countI+2]=='u'):
+            translationStart = countI + 4
+        countI += 1
+    countJ = 2
+    while countJ<(len(translator)-2):
+        if(translator[countJ]=='}'and translator[countJ+1]==']' and translator[countJ+2]=='}'):
+            translationEnd = countJ - 1
+        countJ +=1
+    translation = translator[translationStart:translationEnd]
+    translation2 = translation.decode("utf-8")
+    print(translation2)
+    printTranslation = Label(top, text=translation2)
     printTranslation.pack()
     languageLocation = languageCodes.index(i)
     wrongLanguages = languages[:]

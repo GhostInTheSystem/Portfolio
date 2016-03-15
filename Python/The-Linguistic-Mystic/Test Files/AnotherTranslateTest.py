@@ -1,6 +1,6 @@
 
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# -*- coding: utf-16 -*-
 #
 # Copyright 2014 Google Inc. All Rights Reserved.
 #
@@ -27,17 +27,34 @@ from googleapiclient.discovery import build
 
 
 def main():
-
+  
   # Build a service object for interacting with the API. Visit
   # the Google APIs Console <http://code.google.com/apis/console>
   # to get an API key for your own application.
   service = build('translate', 'v2',
-            developerKey='AIzaSyDRRpR3GS1F1_jKNNM9HCNd2wJQyPG3oN0')
-  print(service.translations().list(
+            developerKey='AIzaSyBUQS5Uc1v8Iq8kTbSkhdnNPkF6icsBG3w')
+  #print(service.languages().list(
+#    ).execute())
+
+  translator = (service.translations().list(
       source='en',
-      target='fr',
-      q=['flower', 'cat']
+      target=i,
+      q=[userRequestForTranslation]
     ).execute())
+  translator = str(translator)
+  i = 0
+  translationStart = 0
+  translationEnd = 0
+  while i<(len(translator)-2):
+    if(translator[i]==':'and translator[i+1]==' ' and translator[i+2]=='u'):
+      translationStart = i+4
+    i += 1
+  j = 2
+  while j<(len(translator)-2):
+    if(translator[j]=='}'and translator[j+1]==']' and translator[j+2]=='}'):
+      translationEnd = i-2
+    j +=1
+  print(translator[translationStart:translationEnd])
 
 if __name__ == '__main__':
-  main()
+      main()
