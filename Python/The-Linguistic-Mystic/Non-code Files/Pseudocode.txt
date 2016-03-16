@@ -14,4 +14,4 @@ While loop that runs if repeat is equal to true
 		Add to score if correct, more adding for more correct score
 		Ask them if they want to do another round
 		If yes, also ask if they want to change difficulty
-Made by Prestoner Richey
+Made by Preston Richey

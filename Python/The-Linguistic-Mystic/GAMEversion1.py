@@ -7,6 +7,7 @@ from googleapiclient.discovery import build
 import random
 from Tkinter import *
 import os
+import json
 service = build('translate', 'v2',
             developerKey='AIzaSyBUQS5Uc1v8Iq8kTbSkhdnNPkF6icsBG3w')
 timesThrough = 0
@@ -178,6 +179,7 @@ while(correctness == "Correct"):
         q=[userRequestForTranslation]
     ).execute())
     translator = str(translator)
+    
     countI = 0
     translationStart = 0
     translationEnd = 0
@@ -188,11 +190,10 @@ while(correctness == "Correct"):
     countJ = 2
     while countJ<(len(translator)-2):
         if(translator[countJ]=='}'and translator[countJ+1]==']' and translator[countJ+2]=='}'):
-            translationEnd = countJ - 1
+            translationEnd = countJ -1
         countJ +=1
     translation = translator[translationStart:translationEnd]
-    translation2 = translation.decode("utf-8")
-    print(translation2)
+    translation2 = translation.decode("unicode_escape")
     printTranslation = Label(top, text=translation2)
     printTranslation.pack()
     languageLocation = languageCodes.index(i)

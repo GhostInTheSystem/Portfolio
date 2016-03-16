@@ -1,4 +1,4 @@
-from tkinter import *
+from Tkinter import *
 top = Tk()
 def russianCallBack():
    messagebox.showinfo( "Result", "Correct!")

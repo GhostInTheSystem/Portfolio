@@ -1,4 +1,3 @@
-#Kira Parker
 import goslate
 import random
 userRequestForTranslation = input("What would you like to translate?")
